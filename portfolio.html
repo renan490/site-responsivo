@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home - RS Solu&ccedil;&otilde;es em Sistemas</title>
+<link href="estilo.css" rel="stylesheet" type="text/css" />
+<link href="imagens.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<ul class="topnav">
+  <li><a href="index.html">Home</a></li>
+  <li><a class="active" href="portfolio.html">Portf&oacute;lio</a></li>
+  <li><a href="servicos.html">Servi&ccedil;os</a></li>
+  <li><a href="contato.html">Contato</a></li>
+  <li class="right"><a href="sobre.html">Sobre</a></li>
+</ul>
+
+<h2 style="text-align:center">Advanced Image Gallery</h2>
+
+<div class="responsive">
+  <div class="img">
+      <img src="Imagens\responsivo.png" alt="Responsive Web Site" width="300" height="200">
+    <div class="desc">Sites Responsivos</div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="img">
+    <img src="Imagens\website.png" alt="Site Profissional" width="300" height="200">
+    <div class="desc">Site Profissional</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="img">
+    <img src="Imagens\webscraping.png" alt="Webscraping" width="300" height="200">
+    <div class="desc">Esteja a frente</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">x</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Get all images and insert the clicked image inside the modal
+// Get the content of the image description and insert it inside the modal image caption
+var images = document.getElementsByTagName('img');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+var i;
+for (i = 0; i < images.length; i++) {
+   images[i].onclick = function(){
+       modal.style.display = "block";
+       modalImg.src = this.src;
+       modalImg.alt = this.alt;
+       captionText.innerHTML = this.nextElementSibling.innerHTML;
+   }
+}
+</script>
+
+<div style="padding:6px;">
+  <p>Clique com o mouse na imagem desejada para ampliar.</p>
+</div>
+
+</body>
+</html>
